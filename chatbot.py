@@ -17,13 +17,13 @@ def main():
     # Load your token and create an Updater for your Bot
     #config = configparser.ConfigParser()
     #config.read("config.ini")
-    updater = Updater(token=(os.environ["TELEGRAM"]["ACCESS_TOKEN"]), use_context=True)
+    updater = Updater(token=(os.environ["ACCESS_TOKEN"]), use_context=True)
     dispatcher = updater.dispatcher
     global redis1
     redis1 = redis.Redis(
-        host=(os.environ["REDIS"]["HOST"]),
-        password=(os.environ["REDIS"]["PASSWORD"]),
-        port=(os.environ["REDIS"]["REDISPORT"]),
+        host=(os.environ["HOST"]),
+        password=(os.environ["PASSWORD"]),
+        port=(os.environ["REDISPORT"]),
     )
     logging.basicConfig(
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
