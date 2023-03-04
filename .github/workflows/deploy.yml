@@ -14,5 +14,5 @@ jobs:
         env:
           HEROKU_API_KEY: 7ac3de89-a1e4-4e32-8486-a23d9944c0a5
           HEROKU_APP_NAME: "comp202022020"  # Rename this to the app of your Heroku app.
-        run: git push -f https://heroku:7ac3de89-a1e4-4e32-8486-a23d9944c0a5@git.heroku.com/comp202022020.git main  
+        run: git push -f https://heroku:7ac3de89-a1e4-4e32-8486-a23d9944c0a5@git.heroku.com/comp202022020.git master  
 
