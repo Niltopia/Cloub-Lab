@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+env:
+  DEP_PATH: requirements.txt
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,4 +18,12 @@ jobs:
           HEROKU_API_KEY: 7ac3de89-a1e4-4e32-8486-a23d9944c0a5
           HEROKU_APP_NAME: "comp202022020"  # Rename this to the app of your Heroku app.
         run: git push -f https://heroku:7ac3de89-a1e4-4e32-8486-a23d9944c0a5@git.heroku.com/comp202022020.git master  
+  safety-check:
+    name: Python safety check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out master
+        uses: actions/checkout@master
 
+      - name: Security vulnerabilities scan
+        uses: aufdenpunkt/python-safety-check@master
